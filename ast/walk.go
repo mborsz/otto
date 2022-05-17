@@ -109,8 +109,8 @@ func Walk(v Visitor, n Node) {
 	case *ForStatement:
 		if n != nil {
 			Walk(v, n.Initializer)
-			Walk(v, n.Update)
 			Walk(v, n.Test)
+			Walk(v, n.Update)
 			Walk(v, n.Body)
 		}
 	case *FunctionLiteral:
