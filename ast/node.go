@@ -470,7 +470,7 @@ func (self *NullLiteral) Idx1() file.Idx           { return file.Idx(int(self.Id
 func (self *NumberLiteral) Idx1() file.Idx         { return file.Idx(int(self.Idx) + len(self.Literal)) }
 func (self *ObjectLiteral) Idx1() file.Idx         { return self.RightBrace }
 func (self *RegExpLiteral) Idx1() file.Idx         { return file.Idx(int(self.Idx) + len(self.Literal)) }
-func (self *SequenceExpression) Idx1() file.Idx    { return self.Sequence[0].Idx1() }
+func (self *SequenceExpression) Idx1() file.Idx    { return self.Sequence[len(self.Sequence)-1].Idx1() }
 func (self *StringLiteral) Idx1() file.Idx         { return file.Idx(int(self.Idx) + len(self.Literal)) }
 func (self *ThisExpression) Idx1() file.Idx        { return self.Idx + 4 }
 func (self *UnaryExpression) Idx1() file.Idx {
